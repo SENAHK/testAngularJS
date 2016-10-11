@@ -1,18 +1,27 @@
 'use strict';
+
 // Déclaration de l'application avec ses [dépendances]
 // La seule dépendance ici est le ngRoute, un module qui permet le routage
 var monApp = angular.module('monApp', ['ngRoute']);
 
 // Routage des pages grâce au module angular 'ngRoute'
 monApp.config(function ($routeProvider) {
-    $routeProvider
-            .when('/', {templateUrl: 'vues/home.html', controller: 'PostsController'})
-            // Par défaut: afficher home.html et associe cette page au controleur désigné
+    // Par défaut: afficher home.html et associe cette page au controleur désigné
+    $routeProvider.when('/', {
+        title: 'Page d\'accueil',
+        templateUrl: 'vues/home.html',
+        controller: 'PostsController'
+    });
 
-            .when('/comments/:id', {templateUrl: 'vues/comments.html', controller: 'CommentsController'})
-            // Sur page comments/id du post: afficher comments.html et associer le controleur
+    // Sur page comments/id du post: afficher comments.html et associer le controleur
+    $routeProvider.when('/comments/:id', {
+        title: 'Les commentaires',
+        templateUrl: 'vues/comments.html',
+        controller: 'CommentsController'
+    });
 
-            .otherwise({redirectTo: '/'});
+
+    $routeProvider.otherwise({redirectTo: '/'});
 });
 
 // Factory est un type de service
@@ -117,20 +126,20 @@ monApp.factory('PostFactory', function () {
                 ]
             }
         ],
-        // Tous les posts
+        // Fonction de récuperation de tous les posts
         getPosts: function () {
             return factory.posts;
         },
-        // Un post
+        // Fonction de récuperation d'UN post
         getPost: function (idPost) {
-            
+
             var post = {};
             angular.forEach(factory.posts, function (value, key) {
                 if (value.id == idPost) {
                     post = value;
                 }
             });
-            
+
             return post;
         }
     };
