@@ -123,12 +123,14 @@ monApp.factory('PostFactory', function () {
         },
         // Un post
         getPost: function (idPost) {
+            
             var post = {};
             angular.forEach(factory.posts, function (value, key) {
                 if (value.id == idPost) {
                     post = value;
                 }
             });
+            
             return post;
         }
     };
