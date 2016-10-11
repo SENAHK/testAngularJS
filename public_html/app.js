@@ -16,7 +16,7 @@ monApp.config(function ($routeProvider) {
 });
 
 // Factory est un type de service
-// Un service permet de créer des objets JS globals (accessibles depuis n controleurs)
+// Un service angular permet de créer des objets JS globals (accessibles depuis n controleurs)
 monApp.factory('PostFactory', function () {
     //Cette factory contient les posts (générés sur JSON generator) et des fonctions d'accès à ceux-ci
     var factory = {
