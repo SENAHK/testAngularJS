@@ -3,7 +3,7 @@
 // La seule dépendance ici est le ngRoute, un module qui permet le routage
 var monApp = angular.module('monApp', ['ngRoute']);
 
-// Routage des pages grâce au module ngRoute
+// Routage des pages grâce au module angular 'ngRoute'
 monApp.config(function ($routeProvider) {
     $routeProvider
             .when('/', {templateUrl: 'vues/home.html', controller: 'PostsController'})
