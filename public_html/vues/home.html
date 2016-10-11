@@ -1,0 +1,9 @@
+<!--ng-repeat est une directive de boucle-->
+<!--{{echo}} ces crochets permettent d'afficher-->
+<div ng-repeat="post in posts">
+    <h1>{{post.name}}</h1>
+    <p>{{post.content}}</p>
+    <a href="#/comments/{{post.id}}"><h2>{{post.comment.length}} Commentaires</h2></a>
+    <hr>
+    <hr>
+</div>

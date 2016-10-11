@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Todo List</title>        
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+        <script src="app.js"></script>
+        <script src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
+    </head>
+    <!--ng-app est une directive(permet de modifier DOM) angularjs qui permet d'initialiser l'app angular-->
+    <body ng-app="monApp">
+        <!--ng-view est une directive angularjs qui inclut le template désiré-->
+        <div ng-view=""></div>
+    </body>
+</html>
